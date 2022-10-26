@@ -1,0 +1,9 @@
+apiVersion: v1
+name: techtrends
+description: Techtrends deployment Kubernetes manifests
+keywords:
+- techtrends
+version: 1.0.0
+maintainers:
+- name: freddieentity
+  email: nguyentrungtinc4nh1516@gmail.com
