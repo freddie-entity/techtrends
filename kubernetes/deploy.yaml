@@ -2,14 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: techtrands
-  name: techtrands
+    app: techtrends
+  name: techtrends
   namespace: sandbox
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: techtrands
+      app: techtrends
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -18,12 +18,12 @@ spec:
   template:
     metadata:
       labels:
-        app: techtrands
+        app: techtrends
     spec:
       containers:
       - image: 0908887875/techtrends:latest
         imagePullPolicy: IfNotPresent
-        name: techtrands
+        name: techtrends
         ports:
         - containerPort: 3111
         resources:

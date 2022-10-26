@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: techtrands
-  name: techtrands
+    app: techtrends
+  name: techtrends
   namespace: sandbox
 spec:
   ports:
@@ -11,5 +11,5 @@ spec:
     protocol: TCP
     targetPort: 3111
   selector:
-    app: techtrands
+    app: techtrends
   type: ClusterIP

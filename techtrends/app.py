@@ -1,6 +1,7 @@
 import sqlite3
 import logging
 import sys
+import os
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
@@ -101,6 +102,18 @@ def metrics():
 
 # start the application on port 3111
 if __name__ == "__main__":
+    #Set up logging
+    logger = logging.getLogger('app_logger')
+
+    #Set loglevel to an Environment Variable
+    loglevel = os.getenv("APP_LOGLEVEL", "DEBUG").upper()
+
+    #Set logging output type dynamically depending on loglevel condition
+    loglevel = (
+        getattr(logging, loglevel)
+        if loglevel in ["CRITICAL", "DEBUG", "ERROR", "INFO", "WARNING"]
+        else logging.DEBUG
+        )
     # set logger to handle STDOUT and STDERR 
     stdout_handler =  logging.StreamHandler(sys.stdout)
     stdout_handler.setLevel(logging.DEBUG)
