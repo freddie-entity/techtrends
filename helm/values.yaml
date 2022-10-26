@@ -25,6 +25,8 @@ resources:
     cpu: 500m
 
 livenessProbe: 
-  path: /healthz 
+  path: /healthz
+  livenessProbePort: 3111
 readinessProbe:
   path: /healthz
+  readinessProbe: 3111
