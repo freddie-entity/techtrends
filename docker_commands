@@ -1,0 +1,37 @@
+## Docker commands used to build the application 
+# TODO: insert the docker build command
+docker build -t 0908887875/techtrends:v1 .
+
+## Docker commands used to run the application
+# TODO: insert the docker run command
+docker run -itd -p 7111:3111 --name techtrends 0908887875/techtrends:v1
+
+## Docker commands used to get the application logs
+# TODO: insert the docker logs command
+docker logs techtrends
+
+## Logs from the container running the TechTrends application
+# TODO: paste logs from the Docker container 
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.1.6:3111/ (Press CTRL+C to quit)
+INFO:app:Article 'KubeCon + CloudNativeCon 2021' is retrieved successfully!
+INFO:werkzeug:127.0.0.1 - - [24/Oct/2022 22:24:08] "GET /2 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Oct/2022 22:24:08] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:app:The 'About Us' page is retrieved successfully!
+INFO:werkzeug:127.0.0.1 - - [24/Oct/2022 22:24:18] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Oct/2022 22:24:18] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:app:Failed attempt to create post!
+INFO:werkzeug:127.0.0.1 - - [24/Oct/2022 22:24:19] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Oct/2022 22:24:19] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:app:The article 'CCNF' is created successfully!
+INFO:werkzeug:127.0.0.1 - - [24/Oct/2022 22:24:25] "[32mPOST /create HTTP/1.1[0m" 302 -
+INFO:app:The 'Home page' page is retrieved successfully!
+INFO:werkzeug:127.0.0.1 - - [24/Oct/2022 22:24:25] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Oct/2022 22:24:25] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:app:The 'Home page' page is retrieved successfully!
+INFO:werkzeug:127.0.0.1 - - [24/Oct/2022 22:24:30] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Oct/2022 22:24:30] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:app:Article 'CCNF' is retrieved successfully!
+INFO:werkzeug:127.0.0.1 - - [24/Oct/2022 22:24:33] "GET /8 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Oct/2022 22:24:33] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
