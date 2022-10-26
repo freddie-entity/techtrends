@@ -1,13 +1,11 @@
 FROM python:3.8-slim-buster
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-WORKDIR /app
-COPY ["init_db.py", "schema.sql", .]
+COPY ["init_db.py", "schema.sql", "."]
 RUN python init_db.py
-
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
-
+WORKDIR /app
 COPY . /app
 RUN adduser -u 4444 --disabled-password --gecos "" appuser && chown -R appuser /app
 EXPOSE 3111
