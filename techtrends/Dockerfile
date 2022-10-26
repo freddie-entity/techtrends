@@ -3,7 +3,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 COPY ["init_db.py", "schema.sql", "."]
 RUN python init_db.py
-COPY requirements.txt .
+COPY /techtrends/requirements.txt .
 RUN python -m pip install -r requirements.txt
 WORKDIR /app
 COPY . /app
